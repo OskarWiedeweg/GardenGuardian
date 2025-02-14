@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: add sidebar">
+    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="refactor: remove laravel web routes">
       <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/test/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738680911257</updated>
       <workItem from="1738680921856" duration="2300000" />
-      <workItem from="1739542271365" duration="6400000" />
+      <workItem from="1739542271365" duration="6686000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add sidebar">
       <option name="closed" value="true" />
@@ -94,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739556641398</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor: remove laravel web routes">
+      <option name="closed" value="true" />
+      <created>1739556891213</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739556891213</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add sidebar" />
+    <MESSAGE value="refactor: remove laravel web routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove laravel web routes" />
   </component>
 </project>
