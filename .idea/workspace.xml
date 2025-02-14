@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: add auth routes to backend">
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/api/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/models.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/+layout.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/login/+page.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/login/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/login/LoginForm.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/login/schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/register/+page.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/register/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/register/RegisterForm.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/auth/register/schema.ts" afterDir="false" />
+    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: add auth pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/api/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +65,11 @@
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "/Users/oskar/Projects/GardenGuardian/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -117,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738680911257</updated>
       <workItem from="1738680921856" duration="2300000" />
-      <workItem from="1739542271365" duration="11309000" />
+      <workItem from="1739542271365" duration="12090000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add sidebar">
       <option name="closed" value="true" />
@@ -151,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739558096257</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add auth pages">
+      <option name="closed" value="true" />
+      <created>1739561756006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739561756008</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +160,7 @@
     <MESSAGE value="refactor: remove laravel web routes" />
     <MESSAGE value="feat: add laravel api package" />
     <MESSAGE value="feat: add auth routes to backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add auth routes to backend" />
+    <MESSAGE value="feat: add auth pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add auth pages" />
   </component>
 </project>
