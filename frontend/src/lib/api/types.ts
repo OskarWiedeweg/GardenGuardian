@@ -10,3 +10,7 @@ export type ApiError = {
     status: number;
     payload: any;
 }
+
+export type Payload<T> = {
+    data: T
+}

@@ -1,4 +1,5 @@
 import type {RequestEvent} from "@sveltejs/kit";
+import {AuthResource} from "$lib/api/auth";
 
 export function api(event: RequestEvent): ApiClient {
     return new ApiClient(event);
@@ -6,6 +7,10 @@ export function api(event: RequestEvent): ApiClient {
 
 class ApiClient {
     constructor(private event: RequestEvent) {
+    }
+
+    auth() {
+        return new AuthResource(this.event);
     }
 
 }
