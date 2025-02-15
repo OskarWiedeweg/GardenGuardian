@@ -8,6 +8,12 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
+export const buildReturnParam = (url: URL) => {
+	const param = "return=";
+	const link = url.searchParams.has("return") ? url.searchParams.get("return")! : url.pathname.slice(1);
+	return param + encodeURIComponent(link);
+}
+
 export const setAuthCookies = (response: AuthResponse, cookies: Cookies) => {
 	const date = new Date();
 	date.setMonth(date.getMonth() + 1);
@@ -16,6 +22,12 @@ export const setAuthCookies = (response: AuthResponse, cookies: Cookies) => {
 		secure: !dev,
 		httpOnly: true,
 		expires: date
+	});
+}
+
+export const deleteAuthCookies = (cookies: Cookies) => {
+	cookies.delete("accessToken", {
+		path: "/"
 	});
 }
 

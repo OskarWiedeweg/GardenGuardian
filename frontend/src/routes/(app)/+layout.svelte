@@ -6,17 +6,43 @@
         SidebarInset,
         SidebarHeader,
         SidebarContent,
+        SidebarFooter,
         SidebarMenu,
         SidebarMenuItem,
         SidebarMenuButton,
         SidebarGroup,
-        SidebarGroupLabel
+        SidebarGroupLabel,
+        useSidebar
     } from "$lib/components/ui/sidebar";
     import {Separator} from "$lib/components/ui/separator";
     import {Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator} from "$lib/components/ui/breadcrumb";
-    import {Trees, Droplets, HeartPulse, Bell, LandPlot, Calendar, Sprout, Clock, Gauge} from "lucide-svelte";
+    import {Avatar, AvatarFallback} from "$lib/components/ui/avatar";
+    import {
+        Trees,
+        Droplets,
+        HeartPulse,
+        Bell,
+        LandPlot,
+        Calendar,
+        Sprout,
+        Clock,
+        Gauge,
+        ChevronsUpDown,
+        LogOut
+    } from "lucide-svelte";
     import {page} from "$app/state";
     import {getPageMap} from "$lib/pages";
+    import {setUser, getUser} from "$lib/state.svelte";
+    import {buildReturnParam} from "$lib/utils";
+    import {
+        DropdownMenu,
+        DropdownMenuTrigger,
+        DropdownMenuContent,
+        DropdownMenuLabel,
+        DropdownMenuSeparator,
+        DropdownMenuItem,
+    } from "$lib/components/ui/dropdown-menu";
+    import {goto} from "$app/navigation";
 
     type Item = {
         title: string,
@@ -86,8 +112,24 @@
         }
     ]
 
+    function getInitials(name: string) {
+        const nameParts = name.trim().split(/\s+/);
+
+        if (nameParts.length >= 2) {
+            return (
+                nameParts[0].charAt(0).toUpperCase() +
+                nameParts[nameParts.length - 1].charAt(0).toUpperCase()
+            );
+        }
+
+        return nameParts[0].charAt(0).toUpperCase();
+    }
+
     const pageMap = $derived(getPageMap(page.route.id ?? "") ?? []);
-    const {children} = $props();
+    const {children, data} = $props();
+    setUser(data.user);
+
+    const sidebar = useSidebar();
 </script>
 
 <SidebarProvider>
@@ -136,6 +178,51 @@
                 </SidebarGroup>
             {/each}
         </SidebarContent>
+        <SidebarFooter>
+            <SidebarMenu>
+                <SidebarMenuItem>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger>
+                            {#snippet child({props})}
+                                <SidebarMenuButton {...props} size="lg" class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+                                    <Avatar class="h-8 w-8 rounded-lg">
+                                        <AvatarFallback class="rounded-lg">{getInitials(getUser().name)}</AvatarFallback>
+                                    </Avatar>
+                                    <div class="grid flex-1 text-left text-sm leading-tight">
+                                        <span class="truncate font-semibold">{getUser().name}</span>
+                                        <span class="truncate text-xs">{getUser().email}</span>
+                                    </div>
+                                    <ChevronsUpDown class="ml-auto size-4" />
+                                </SidebarMenuButton>
+                            {/snippet}
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                                class="w-[--bits-dropdown-menu-anchor-width] min-w-56 rounded-lg"
+                                side={sidebar?.isMobile ? "bottom" : "right"}
+                                align="end"
+                                sideOffset={4}
+                        >
+                            <DropdownMenuLabel>
+                                <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+                                    <Avatar class="h-8 w-8 rounded-lg">
+                                        <AvatarFallback class="rounded-lg">{getInitials(getUser().name)}</AvatarFallback>
+                                    </Avatar>
+                                    <div class="grid flex-1 text-left text-sm leading-tight">
+                                        <span class="truncate font-semibold">{getUser().name}</span>
+                                        <span class="truncate text-xs">{getUser().email}</span>
+                                    </div>
+                                </div>
+                            </DropdownMenuLabel>
+                            <DropdownMenuSeparator/>
+                            <DropdownMenuItem onclick={() => goto(`/logout?${buildReturnParam(page.url)}`)}>
+                                <LogOut/>
+                                Log Out
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </SidebarMenuItem>
+            </SidebarMenu>
+        </SidebarFooter>
     </Sidebar>
     <SidebarInset>
         <header class="flex h-16 shrink-0 items-center gap-2">

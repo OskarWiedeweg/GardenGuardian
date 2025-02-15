@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: add auth pages">
+    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: create garden after sign up">
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/api/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/state.svelte.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/logout/+page.server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/logout/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/pages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +31,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="+page" />
         <option value="login/+page" />
         <option value="LoginForm" />
         <option value="+layout" />
         <option value="TypeScript File" />
+        <option value="+page" />
       </list>
     </option>
   </component>
@@ -54,6 +66,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.scratch | #1.executor": "Run",
+    "HTTP Request.scratch | #2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/oskar/Projects/GardenGuardian/frontend/src/routes/(auth)/register",
@@ -80,12 +93,16 @@
       <recent name="$PROJECT_DIR$/frontend/src/routes/(app)" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="HTTP Request.scratch | #2">
     <configuration name="scratch | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.scratch | #2" />
         <item itemvalue="HTTP Request.scratch | #1" />
       </list>
     </recent_temporary>
@@ -107,7 +124,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738680911257</updated>
       <workItem from="1738680921856" duration="2300000" />
-      <workItem from="1739542271365" duration="12090000" />
+      <workItem from="1739542271365" duration="15354000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add sidebar">
       <option name="closed" value="true" />
@@ -149,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739561756008</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: create garden after sign up">
+      <option name="closed" value="true" />
+      <created>1739562556433</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739562556434</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +186,7 @@
     <MESSAGE value="feat: add laravel api package" />
     <MESSAGE value="feat: add auth routes to backend" />
     <MESSAGE value="feat: add auth pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add auth pages" />
+    <MESSAGE value="feat: create garden after sign up" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create garden after sign up" />
   </component>
 </project>
