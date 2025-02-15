@@ -4,21 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="feat: create garden after sign up">
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/api/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/state.svelte.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.server.ts" afterDir="false" />
+    <list default="true" id="cab67608-5440-4aef-90c8-b684aaf7c347" name="Changes" comment="fix: auth redirect logic and enhance error handling&#10;&#10;Extracted auth redirect into a dedicated function for reuse and improved readability. Added handling for 401 errors by deleting auth cookies and redirecting users to the login page. This ensures better session management and user experience.">
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/api/garden.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/components/EmptyState.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/components/FormGlobalError.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/+page.server.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/logout/+page.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/logout/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/BedForm.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/[id]/+page.server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/[id]/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/new/+page.server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/new/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/plan/layout/schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Garden.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Garden.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks.server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/api/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/api/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/components/autoform/AutoForm.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/components/autoform/AutoForm.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/components/autoform/Layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/components/autoform/Layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/models.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/lib/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/pages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/(app)/+layout.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +40,11 @@
         <option value="login/+page" />
         <option value="LoginForm" />
         <option value="+layout" />
-        <option value="TypeScript File" />
+        <option value="EmptyState" />
+        <option value="BedForm" />
+        <option value="FormGlobalError" />
         <option value="+page" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -124,7 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738680911257</updated>
       <workItem from="1738680921856" duration="2300000" />
-      <workItem from="1739542271365" duration="15354000" />
+      <workItem from="1739542271365" duration="24061000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add sidebar">
       <option name="closed" value="true" />
@@ -174,7 +183,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739562556434</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: add user state to frontend">
+      <option name="closed" value="true" />
+      <created>1739611116845</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739611116846</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: auth redirect logic and enhance error handling&#10;&#10;Extracted auth redirect into a dedicated function for reuse and improved readability. Added handling for 401 errors by deleting auth cookies and redirecting users to the login page. This ensures better session management and user experience.">
+      <option name="closed" value="true" />
+      <created>1739620563696</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739620563696</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +212,8 @@
     <MESSAGE value="feat: add auth routes to backend" />
     <MESSAGE value="feat: add auth pages" />
     <MESSAGE value="feat: create garden after sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create garden after sign up" />
+    <MESSAGE value="feat: add user state to frontend" />
+    <MESSAGE value="fix: auth redirect logic and enhance error handling&#10;&#10;Extracted auth redirect into a dedicated function for reuse and improved readability. Added handling for 401 errors by deleting auth cookies and redirecting users to the login page. This ensures better session management and user experience." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: auth redirect logic and enhance error handling&#10;&#10;Extracted auth redirect into a dedicated function for reuse and improved readability. Added handling for 401 errors by deleting auth cookies and redirecting users to the login page. This ensures better session management and user experience." />
   </component>
 </project>

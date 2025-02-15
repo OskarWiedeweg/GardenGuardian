@@ -27,7 +27,7 @@
 </script>
 
 <FormGlobalError errors={$allErrors}/>
-<form class="grid gap-2 lg:grid-cols-[1fr_300px]" method="post" use:enhance {action}>
+<form class="grid gap-2 {formLayout.side ? 'lg:grid-cols-[1fr_300px]' : ''}" method="post" use:enhance {action}>
     <div class="grid gap-2">
         {#each formLayout.main as layout}
             <Layout {layout} {form} {formData}/>

@@ -11,9 +11,25 @@ export const pageMap: Record<string, PageTree> = {
         label: "Dashboard",
         exclusive: true,
         children: {
-            test: {
-                link: "/test",
-                label: "Test Page",
+            plan: {
+                link: "/",
+                label: "Planning & Schedule",
+                children: {
+                    layout: {
+                        link: "/plan/layout",
+                        label: "Garden Layout",
+                        children: {
+                            "new": {
+                                link: "/plan/layout/new",
+                                label: "New Bed"
+                            },
+                            "[id]": {
+                                link: "/plan/layout",
+                                label: "Garden Bed #id"
+                            }
+                        }
+                    }
+                }
             }
         }
     }

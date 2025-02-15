@@ -14,3 +14,14 @@ export type ApiError = {
 export type Payload<T> = {
     data: T
 }
+
+export type CollectionPayload<T> = Payload<T> & {
+    meta: {
+        currentPage: number,
+        from?: number,
+        to?: number,
+        lastPage: number,
+        perPage: number,
+        total: number
+    }
+}

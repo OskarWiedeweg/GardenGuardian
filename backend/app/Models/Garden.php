@@ -13,4 +13,12 @@ class Garden extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function resolveRouteBinding($value, $field = null)
+    {
+        if ($value == "my") {
+            return self::query()->whereBelongsTo(auth()->user())->firstOrFail();
+        }
+        return parent::resolveRouteBinding($value, $field);
+    }
+
 }
