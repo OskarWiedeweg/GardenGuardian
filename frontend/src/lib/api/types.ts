@@ -15,7 +15,7 @@ export type Payload<T> = {
     data: T
 }
 
-export type CollectionPayload<T> = Payload<T> & {
+export type CollectionPayload<T> = Payload<T[]> & {
     meta: {
         currentPage: number,
         from?: number,

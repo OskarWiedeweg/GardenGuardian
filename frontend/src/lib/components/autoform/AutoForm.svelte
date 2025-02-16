@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {superForm} from 'sveltekit-superforms';
+    import SuperDebug, {superForm} from 'sveltekit-superforms';
     import {zodClient} from 'sveltekit-superforms/adapters';
     import type {ZodSchema} from 'zod';
     import type {FormLayout} from "$lib/components/autoform/types";
@@ -37,3 +37,6 @@
         <Layout layout={formLayout.side} {form} {formData}/>
     {/if}
 </form>
+
+<SuperDebug data={$formData}/>
+<SuperDebug data={$allErrors}/>

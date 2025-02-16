@@ -2,7 +2,7 @@
     import {Alert, AlertDescription} from "$lib/components/ui/alert";
     import {CircleAlert} from "lucide-svelte";
 
-    const {errors}: {errors: {path: string, errors: string[]}[]} = $props();
+    const {errors}: {errors: {path: string, messages: string[]}[]} = $props();
     const displayErrors = $derived(errors.filter(e => e.path === "_errors").map(e => e.messages).flat())
 </script>
 
